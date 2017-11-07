@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 
+#define HAVE_SYS_MMAN_H
+
 //! Project version number for NAChloride.
 FOUNDATION_EXPORT double NAChlorideVersionNumber;
 

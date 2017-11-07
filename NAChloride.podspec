@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "NAChloride"
-  s.version      = "2.3.0"
+  s.version      = «2.3.1»
   s.summary      = "Objective-C library for libsodium (NaCl)"
   s.homepage     = "https://github.com/zodchiy7/NAChloride"
   s.license      = { :type => "MIT" }
