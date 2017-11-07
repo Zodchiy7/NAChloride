@@ -59,4 +59,18 @@
   return [[NABoxKeypair alloc] initWithPublicKey:publicKey secretKey:secretKey error:error];
 }
 
+
++ (instancetype)generateUseSeed:(unsigned char *)seed error:(NSError **)error {
+    NSMutableData *publicKey = [NSMutableData dataWithLength:NABoxPublicKeySize];
+    __block int retval = -1;
+    NASecureData *secretKey = [NASecureData secureReadOnlyDataWithLength:NABoxSecretKeySize completion:^(void *bytes, NSUInteger length) {
+        retval = crypto_box_seed_keypair([publicKey mutableBytes], bytes, seed);
+    }];
+    if (retval != 0) {
+        if (error) *error = NAError(NAErrorCodeFailure, @"Keypair generate failed");
+        return nil;
+    }
+    return [[NABoxKeypair alloc] initWithPublicKey:publicKey secretKey:secretKey error:error];
+}
+
 @end

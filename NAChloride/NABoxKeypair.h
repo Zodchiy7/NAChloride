@@ -18,5 +18,6 @@
 - (instancetype)initWithPublicKey:(NSData *)publicKey secretKey:(NASecureData *)secretKey error:(NSError **)error;
 
 + (instancetype)generate:(NSError **)error;
++ (instancetype)generateUseSeed:(unsigned char *)seed error:(NSError **)error;
 
 @end
