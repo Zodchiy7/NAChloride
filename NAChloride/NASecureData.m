@@ -65,7 +65,7 @@
   }
   if (result != 0) {
     if (error) *error = NAError(NAErrorSecureDataAccessFailed, ([NSString stringWithFormat:@"Unable to set protection (%@)", @(result)]));
-    return NO;
+    //return NO;
   }
   return YES;
 }
