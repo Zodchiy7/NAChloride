@@ -8,13 +8,14 @@ Pod::Spec.new do |s|
   s.author       = { "Zodchiy7" => "Zodchiy7@gmail.com" }
   s.source       = { :git => "https://github.com/zodchiy7/NAChloride.git", :tag => s.version.to_s }
   s.dependency 'libsodium'
-  s.compiler_flags = '-DNATIVE_LITTLE_ENDIAN=1'
   s.requires_arc = true
 
   s.ios.deployment_target = "7.0"
   s.ios.source_files = 'NAChloride/**/*.{c,h,m}'
+  s.ios.compiler_flags = '-DNATIVE_LITTLE_ENDIAN=1'
 
   s.osx.deployment_target = "10.8"
   s.osx.source_files = 'NAChloride/**/*.{c,h,m}'
+  s.osx.compiler_flags = '-DNATIVE_LITTLE_ENDIAN=1'
 
 end
