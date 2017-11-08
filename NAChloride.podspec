@@ -9,10 +9,10 @@ Pod::Spec.new do |s|
   s.source       = { :git => "https://github.com/zodchiy7/NAChloride.git", :tag => s.version.to_s }
   s.dependency 'libsodium'
   s.requires_arc = true
+  s.compiler_flags = '-DHAVE_SYS_MMAN_H -DNATIVE_LITTLE_ENDIAN=1 -DHAVE_MADVISE -DHAVE_MMAP -DHAVE_MPROTECT -DHAVE_POSIX_MEMALIGN -DHAVE_WEAK_SYMBOLS -DHAVE_SYS_MMAN_H'
 
   s.ios.deployment_target = "7.0"
   s.ios.source_files = 'NAChloride/**/*.{c,h,m}'
-  s.ios.compiler_flags = '-DHAVE_SYS_MMAN_H -DNATIVE_LITTLE_ENDIAN=1 -DHAVE_MADVISE -DHAVE_MMAP -DHAVE_MPROTECT -DHAVE_POSIX_MEMALIGN -DHAVE_WEAK_SYMBOLS -DHAVE_SYS_MMAN_H'
 
   s.osx.deployment_target = "10.8"
   s.osx.source_files = 'NAChloride/**/*.{c,h,m}'
